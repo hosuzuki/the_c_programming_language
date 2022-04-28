@@ -1,5 +1,8 @@
 # The C Programming Language 2nd Edition - Solutions
 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
 ## Introduction
 **The C Programming Language** is a very popular book and sometimes people refer to it as **K&R**. The authors *Brian W. Kernighan* and *Dennis M. Ritchie* did a very good job of explaining the core concepts of programming. The focus of the book is the C programming language, however, the approach is general, so it can be extrapolated to other programming languages.
 
@@ -38,3 +41,4 @@ A debugger is a tool that can become very handy when trying to find out how a pr
 A very good option is [**LLDB**](https://lldb.llvm.org). It is the default debugger in Xcode on macOS and supports debugging C, Objective-C and C++. It converts debug information into Clang types so that it can leverage the Clang compiler infrastructure.
 
 Another very popular option is [**GDB**](https://www.gnu.org/software/gdb). It supports the following languages (in alphabetical order): Ada, Assembly, C, C++, D, Fortran, Go, Objective-C, OpenCL, Modula-2, Pascal, Rust.
+
