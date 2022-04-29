@@ -1,0 +1,1 @@
+Experiment to find out what happen when printf's argument string contains \c, where c is some character not listed above(\t, \b, \", \\).
