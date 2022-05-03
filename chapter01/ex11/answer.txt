@@ -1,0 +1,6 @@
+- no input
+- newlines only
+- blanks, tabs, newlines only
+- one word per line (no balnk, no tab)
+- a word
+- several blanks followed by a word
