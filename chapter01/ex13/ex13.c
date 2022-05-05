@@ -12,7 +12,6 @@ int main()
 	int	nc;
 	int	state;
 	int	len;
-	int	maxvalue;
 	int	overflow;
 	int	wl[MAXWORD];
 
@@ -43,21 +42,17 @@ int main()
 		else
 			++nc;
 	}
-	maxvalue = 0;
-	for (i = 1; i < MAXWORD; ++i)
-		if (wl[i] > maxvalue)
-			maxvalue = wl[i];
+	printf("-------+----------------\n");
+	printf("len of |\nwords  |  count\n");
+	printf("-------+----------------\n");
 	for (i = 1; i < MAXWORD; ++i)
 	{
-		printf("%5d = %5d : ", i, wl[i]);
+		printf("%6d | %3d : ", i, wl[i]);
 		if (wl[i] > 0)
-		{
-			if ((len = wl[i] * MAXHIST / maxvalue) <= 0)
-				len = 1;
-		}
+			len = wl[i];
 		else
 			len = 0;
-		while (len > 0)
+		while (0 < len)
 		{
 			putchar ('*');
 			--len;
@@ -65,5 +60,5 @@ int main()
 		putchar('\n');
 	}
 	if (overflow > 0)
-		printf("There are %d words >= %d\n", overflow, MAXWORD);
+		printf("There are %d words >= %d letters\n", overflow, MAXWORD);
 }
