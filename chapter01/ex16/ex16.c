@@ -1,16 +1,16 @@
 #include <stdio.h>
-#deifne MAXLINE 1000
+#define MAXLINE 1000
 
-int	getline(char *s, int lim)
+int	ft_getline(char *s, int max)
 {
-	int	c
+	int	c;
 	int	i;
 	int	j;
 
 	j = 0;
 	for (i = 0; (c = getchar()) != EOF && c != '\n'; ++i)
 	{
-		if (i < lim - 2)
+		if (i < max - 2)
 		{
 			s[j] = c;
 			++j;
@@ -26,12 +26,12 @@ int	getline(char *s, int lim)
 	return i;
 }
 
-void	copy(char *to, char *from)
+void	ft_copy(char *to, char *from)
 {
 	int	i;
 
 	i = 0;
-	while ((to[i] = from[i]) ! = '\0')
+	while ((to[i] = from[i]) != '\0')
 		++i;
 }
 
@@ -43,16 +43,16 @@ int	main()
 	char	longest[MAXLINE];
 
 	max = 0;
-	while ((len = getline(line, MAXLINE)) > 0)
+	while ((len = ft_getline(line, MAXLINE)) > 0)
 	{
-		printf("%d, %s", len, line);
+		printf("---> length: %d\n", len);
 		if (len > max)
 		{
 			max = len;
-			copy(longest, line);
+			ft_copy(longest, line);
 		}
 	}
 	if (max > 0)
-		printf("%s", longest);
-	return 0:
+		printf("---longest---\n%s", longest);
+	return 0;
 }
