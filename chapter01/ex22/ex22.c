@@ -7,22 +7,33 @@ void	ft_fold(void)
 {
 	int	c;
 	int n;
+	int flag;
 
 	n = 0;
+	flag = 0;
 	while ((c = getchar()) != EOF)
 	{
-		if (c == ' ' || c == '\t')
+		if (c == '\n')
 		{
-			if (n < N)
+			n = 0;
+			putchar('\n');
+		}
+		else if (c == ' ' || c == '\t')
+		{
+			if (n < N && flag == 0)
 			{
 				++n;
+				flag = 1;
 				putchar('\n');
 			}
-			else 
+			else if (n >= N)
 				return ;
 		}
 		else
+		{
+			flag = 0;
 			putchar(c);
+		}
 	}
 }
 
