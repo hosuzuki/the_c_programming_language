@@ -14,7 +14,10 @@ void	ft_fold(void)
 	while ((c = getchar()) != EOF)
 	{
 		if (c == '\n')
+		{
 			n = 0;
+			putchar('\n');
+		}
 		else if (c == ' ' || c == '\t')
 		{
 			if (n < N && flag == 0)
