@@ -1,3 +1,7 @@
+//This is a wrong answer.
+// N has to set to limit the number of columns 
+// but N is set to limit the number of raws instead in this solution.
+
 #include <stdio.h>
 
 #define TABINC 8
