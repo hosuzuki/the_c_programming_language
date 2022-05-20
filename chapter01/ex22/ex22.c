@@ -16,7 +16,7 @@ void	ft_fold(void)
 		if (c == '\n')
 		{
 			n = 0;
-			putchar('\n');
+//			putchar('\n');
 		}
 		else if (c == ' ' || c == '\t')
 		{
@@ -26,10 +26,10 @@ void	ft_fold(void)
 				flag = 1;
 				putchar('\n');
 			}
-			else if (n >= N)
-				return ;
+//			else if (n >= N)
+//				return ;
 		}
-		else
+		else if (n < N)
 		{
 			flag = 0;
 			putchar(c);
