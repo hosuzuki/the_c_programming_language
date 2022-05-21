@@ -21,10 +21,10 @@ int	ft_extab(int pos)
 	for (++pos; pos < MAXCOL && pos % TABINC != 0; ++pos)
 		line[pos] = ' ';
 	if (pos < MAXCOL)
-		return pos;
+		return (pos);
 	else
 	{
-		printl(pos);
+		ft_printl(pos);
 		return (0);
 	}
 }
@@ -34,7 +34,7 @@ int	ft_findblank(int pos)
 	while (pos > 0 && line[pos] != ' ')
 		--pos;
 	if (pos == 0)
-		return MAXCOL;
+		return (MAXCOL);
 	else
 		return (pos + 1);
 }
@@ -74,10 +74,10 @@ void ft_fold(void)
 			ft_printl(pos);
 			pos = 0;
 		}
-		else if (++pos <= MAXCOL)
+		else if (++pos >= MAXCOL)
 		{
 			pos = ft_findblank(pos);
-			printl(pos);
+			ft_printl(pos);
 			pos = ft_newpos(pos);
 		}
 	}
