@@ -4,7 +4,6 @@ int brace;
 int	brack;
 int	paren;
 
-
 void	ft_search(int c)
 {
 	if ( c == '{')
@@ -21,7 +20,7 @@ void	ft_search(int c)
 		--paren;
 }
 
-void	ft_in_comment()
+void	ft_in_comment(void)
 {
 	int	c;
 	int	d;
@@ -45,6 +44,25 @@ void ft_in_quote(int c)
 	}
 }
 
+void	ft_print_error(void)
+{
+	if (brace < 0)
+	{
+		printf("Unblanced braces\n");
+		brace = 0;
+	}
+	else if (brack < 0)
+	{
+		printf("Unbalanced brackets\n");
+		brack = 0;
+	}
+	else if (paren < 0)
+	{
+		printf("Unbalanced parentheses\n");
+		paren = 0;
+	}
+}
+
 int	main(void)
 {
 	int	c;
@@ -62,21 +80,7 @@ int	main(void)
 			ft_in_quote(c);
 		else
 			ft_search(c);
-		if (brace < 0)
-		{
-			printf("Unblanced braces\n");
-			brace = 0;
-		}
-		else if (brack < 0)
-		{
-			printf("Unbalanced brackets\n");
-			brack = 0;
-		}
-		else if (paren < 0)
-		{
-			printf("Unbalanced parentheses\n");
-			paren = 0;
-		}
+		ft_print_error();
 	}
 	if (brace > 0)
 		printf("Unbalanced braces\n");
@@ -85,4 +89,3 @@ int	main(void)
 	if (paren > 0)
 		printf("Unbalanced parentheses\n");
 }
-
