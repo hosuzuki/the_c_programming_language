@@ -4,12 +4,21 @@
 
 int	main(void)
 {
-	printf("singed char min  = %d\n", (~(char)0 >> 1)); //-1
-	printf("singed char min  = %d\n", ~((char)0 >> 1)); //-1
-	printf("singed char min  = %d\n", ~(~(char)0 >> 1)); //0
-	printf("singed char min  = %d\n", (~0 >> 1)); // -1
-	printf("singed char min  = %d\n", ((unsigned char) ~0 >> 1)); //127
-	printf("singed char min  = %d\n", (char)((unsigned char) ~0 >> 1)); //127
+	printf("singed char min  = %d\n", ((char) ~0)); 		//-1 11111111
+	printf("singed char min  = %d\n", (~0 >> 1)); 			//-1 11111111
+	printf("singed char min  = %d\n", ((char)0 >> 1));  // 0 00000000
+	printf("singed char min  = %d\n", (~(char)0 >> 1)); //-1 11111111
+	printf("singed char min  = %d\n", ((char) ~0 >> 1)); //-1 11111111
+	printf("singed char min  = %d\n", ((char) ~0 >> 5)); //-1 11111111
+	printf("singed char min  = %d\n", ~((char)0 >> 1)); //-1 11111111
+	printf("singed char min  = %d\n", ~(~(char)0 >> 1)); //0 00000000
+	printf("singed char min  = %d\n", ((unsigned char) ~0)); //255 111111111
+	printf("singed char min  = %d\n", ((unsigned char) ~0 >> 1)); //127 011111111
+	printf("singed char min  = %d\n", (char)((unsigned char) ~0 >> 1)); //127 01111111
+
+	printf("singed char ?  = %d\n", (int) ~0 >> 3); //-1
+	printf("singed char ?  = %ld\n", (long) ~0 >> 3); //-1
+	printf("singed char ?  = %lld\n", (long long) ~0 >> 5); //-1
 
 	printf("singed char min  = %d\n", ~(char)((unsigned char) ~0 >> 1));
 	printf("singed char max  = %d\n", (char)((unsigned char) ~0 >> 1));
