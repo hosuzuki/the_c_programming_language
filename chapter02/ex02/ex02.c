@@ -3,14 +3,16 @@
 enum loop {NO, YES};
 enum loop okloop = YES;
 
-int main(void)
+int	main(void)
 {
+	int	c;
 	int i;
 	int lim;
-	
+	char s[20];
+
 	i = 0;
 	lim = 10;
-	while (okloop = YES)
+	while (okloop == YES)
 	{
 		if (i >= lim - 1)
 			okloop = NO;
@@ -24,6 +26,8 @@ int main(void)
 			++i;
 		}
 	}
+	s[i] = '\0';
 	printf("i: %d\n", i);
+	printf("s: %s\n", s);
 	return (0);
 }
