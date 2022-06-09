@@ -16,6 +16,12 @@ int	ft_scan_letters(char *s)
 {
 	int	i = 0;
 
+	if (s[i] == '0')
+	{
+		++i;
+		if (s[i] == 'x' || s[i] == 'X')
+			++i;
+	}
 	while(s[i])
 	{
 		if (!ft_strchr("0123456789abcdefABCDEF", s[i]))
@@ -30,8 +36,6 @@ int	ft_htoi(char *s)
 	int	res;
 	int	i;
 
-	res = 0;
-	i = 0;
 	if (!s)
 		return (-1);
 	if (ft_scan_letters(s) == -1) 
@@ -39,6 +43,14 @@ int	ft_htoi(char *s)
 		printf("INPUT ERROR\n");
 		return (-1);
 	}
+	i = 0;
+	if (s[i] == '0')
+	{
+		++i;
+		if (s[i] == 'x' || s[i] == 'X')
+			++i;
+	}
+	res = 0;
 	while (s[i])
 	{
 		if ('a' <= s[i] && s[i] <= 'f')
@@ -47,6 +59,7 @@ int	ft_htoi(char *s)
 			res = res * 16 + (s[i] - 'A' + 10);
 		else 
 			res = res * 16 + (s[i] - '0');
+		printf("res:%d\n", res);
 		++i;
 	}
 	return (res);
