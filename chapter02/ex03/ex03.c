@@ -19,9 +19,10 @@ int	ft_scan_letters(char *s)
 	while(s[i])
 	{
 		if (!ft_strchr("0123456789abcdefABCDEF", s[i]))
-			return (-1)
+			return (-1);
 		++i;
 	}
+	return (0);
 }
 
 int	ft_htoi(char *s)
@@ -40,16 +41,27 @@ int	ft_htoi(char *s)
 	}
 	while (s[i])
 	{
-		if ('a' <= s[i] && s[i] <= 'f)
+		if ('a' <= s[i] && s[i] <= 'f')
+			res = res * 16 + (s[i] - 'a' + 10);
+		else if ('A' <= s[i] && s[i] <= 'F')
+			res = res * 16 + (s[i] - 'A' + 10);
+		else 
+			res = res * 16 + (s[i] - '0');
+		++i;
+	}
+	return (res);
 }
 
 int	main(void)
 {
-	char s[10] = "ABCDEF12";
+	char s[10] = "ABCD2";
 	int	res;
 
 	res = ft_htoi(s);
 	if (res != -1)
-		printf("s: %s\n", s);
+	{
+		printf("hex: %s\n", s);
+		printf("res: %d\n", res);
+	}
 	return (0);
 }
